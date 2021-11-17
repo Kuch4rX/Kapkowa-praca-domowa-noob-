@@ -161,7 +161,23 @@ namespace Kapkowa_praca_domowa___noob_
                     if (item.czyBonus)
                     {
                         ItemGoUp(item);
-                        predkoscGracza = 10;
+                        rzycko++;
+                        if (rzycko > 3 & !godMode.Checked)
+                        {
+                            rzycko = 3;
+                        }
+                        if (rzycko == 3)
+                        {
+                            zycko3.Value = 100;
+                        }
+                        if (rzycko == 2)
+                        {
+                            zycko2.Value = 100;
+                        }
+                        if (rzycko == 1)
+                        {
+                            zycko2.Value = 0;
+                        }
                     }
                     else if (item.czyDobry)
                     {
@@ -175,9 +191,14 @@ namespace Kapkowa_praca_domowa___noob_
                     {
                         ItemGoUp(item);
                         rzycko--;
+                        if (rzycko == 3)
+                        {
+                            zycko3.Value = 100;
+                        }
                         if (rzycko == 2)
                         {
                             zycko3.Value = 0;
+                            zycko2.Value = 100;
                         }
                         if (rzycko == 1)
                         {
@@ -190,6 +211,7 @@ namespace Kapkowa_praca_domowa___noob_
                             punktyLabel.Text = "Punkty: " + punkty;
                             istrukcjaLabel.Visible = true;
                             przegranaLabel.Visible = true;
+                            godMode.Visible = true;
                             GameOver = true;
                             muzyka.Stop();
                         }
@@ -253,13 +275,14 @@ namespace Kapkowa_praca_domowa___noob_
             muzyka.Stop();
             proby++;
             przegranaLabel.Visible = false;
+            godMode.Visible = false;
             winLabel.Visible = false;
             istrukcjaLabel.Visible = false;
             progressMuzyki.Stop();
             progressBar1.Value = 0;
             progressMuzyki.Start();
             ileTickow = 0;
-            rzycko = 999;
+            godmod();
             ktoraSekunda = 0;
             punkty = 0;
             probyLabel.Text = "Próby: " + proby;
@@ -287,7 +310,7 @@ namespace Kapkowa_praca_domowa___noob_
                 {
                     predkoscMin = 2;
                     predkoscMax = 5;
-                    dodawanieNubkow(5, 0, 0);
+                    dodawanieNubkow(5, 0, 1);
                 }
                 if (ktoraSekunda == 30)
                 {
@@ -298,14 +321,14 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 3;
                     predkoscMax = 5;
-                    dodawanieNubkow(5, 3, 0);
+                    dodawanieNubkow(5, 3, 1);
                 }
                 if (ktoraSekunda == 60)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 9;
                     predkoscMax = 14;
-                    dodawanieNubkow(7, 4, 0);
+                    dodawanieNubkow(7, 4, 1);
                 }
                 if (ktoraSekunda == 118)
                 {
@@ -329,7 +352,7 @@ namespace Kapkowa_praca_domowa___noob_
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 3, 0);
+                    dodawanieNubkow(6, 3, 1);
                 }
                 if (ktoraSekunda == 255)
                 {
@@ -339,28 +362,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 9;
                     predkoscMax = 12;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 256)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 257)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 258)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 270)
                 {
@@ -370,28 +393,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 9;
                     predkoscMax = 12;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 271)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 272)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 273)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 284)
                 {
@@ -401,28 +424,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 9;
                     predkoscMax = 12;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 285)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 286)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 287)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 300)
                 {
@@ -432,28 +455,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 15;
                     predkoscMax = 19;
-                    dodawanieNubkow(15, 0, 0);
+                    dodawanieNubkow(15, 0, 1);
                 }
                 if (ktoraSekunda == 301)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 302)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 303)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 314)
                 {
@@ -463,28 +486,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 9;
                     predkoscMax = 12;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 315)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 316)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 317)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 330)
                 {
@@ -494,28 +517,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 9;
                     predkoscMax = 12;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 331)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 332)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 333)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 334)
                 {
@@ -525,28 +548,28 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 9;
                     predkoscMax = 12;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 344)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 345)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 10;
                     predkoscMax = 14;
-                    dodawanieNubkow(0, 10, 0);
+                    dodawanieNubkow(0, 10, 1);
                 }
                 if (ktoraSekunda == 346)
                 {
                     usuwanieNubkuw();
                     predkoscMin = 12;
                     predkoscMax = 16;
-                    dodawanieNubkow(6, 4, 0);
+                    dodawanieNubkow(6, 4, 1);
                 }
                 if (ktoraSekunda == 359)
                 {
@@ -556,7 +579,7 @@ namespace Kapkowa_praca_domowa___noob_
                     flash.Start();
                     predkoscMin = 3;
                     predkoscMax = 5;
-                    dodawanieNubkow(5, 3, 0);
+                    dodawanieNubkow(5, 3, 1);
                 }
             }
         }
@@ -658,6 +681,23 @@ namespace Kapkowa_praca_domowa___noob_
             discord.UserName = "ALTAIR";
             discord.WebHook = "https://discord.com/api/webhooks/910634339291766785/C6p58iufheZzGEq3xoPIqxO840_IXvLOEsnH4XHj4DnbRZ67tcnPh98R0R1oftvQpnkT";
             discord.SendMessage(wiadomosc);
+        }
+
+        private void godMode_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void godmod()
+        {
+            if (godMode.Checked)
+            {
+                rzycko = 999;
+            }
+            else
+            {
+                rzycko = 3;
+            }
         }
 
         private PictureBox twuszboxa(int ile)

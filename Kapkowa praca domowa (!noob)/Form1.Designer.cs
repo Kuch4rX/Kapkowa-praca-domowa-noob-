@@ -49,6 +49,7 @@
             this.istrukcjaLabel = new System.Windows.Forms.Label();
             this.przegranaLabel = new System.Windows.Forms.Label();
             this.probyLabel = new System.Windows.Forms.Label();
+            this.godMode = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Gracz)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,12 +250,24 @@
             this.probyLabel.TabIndex = 18;
             this.probyLabel.Text = "Próby:  0";
             // 
+            // godMode
+            // 
+            this.godMode.AutoSize = true;
+            this.godMode.Location = new System.Drawing.Point(302, 36);
+            this.godMode.Name = "godMode";
+            this.godMode.Size = new System.Drawing.Size(72, 17);
+            this.godMode.TabIndex = 19;
+            this.godMode.Text = "Godmode";
+            this.godMode.UseVisualStyleBackColor = true;
+            this.godMode.CheckedChanged += new System.EventHandler(this.godMode_CheckedChanged);
+            // 
             // Altair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(402, 667);
+            this.Controls.Add(this.godMode);
             this.Controls.Add(this.probyLabel);
             this.Controls.Add(this.przegranaLabel);
             this.Controls.Add(this.istrukcjaLabel);
@@ -311,6 +324,7 @@
         private System.Windows.Forms.Label istrukcjaLabel;
         private System.Windows.Forms.Label przegranaLabel;
         private System.Windows.Forms.Label probyLabel;
+        private System.Windows.Forms.CheckBox godMode;
     }
 }
 
