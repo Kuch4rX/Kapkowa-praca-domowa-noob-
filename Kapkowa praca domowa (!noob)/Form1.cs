@@ -320,8 +320,8 @@ namespace Kapkowa_praca_domowa___noob_
                 if (ktoraSekunda == 220)
                 {
                     usuwanieNubkuw();
-                    predkoscMin = 1;
-                    predkoscMax = 2;
+                    predkoscMin = 2;
+                    predkoscMax = 3;
                     dodawanieNubkow(0, 0, 1);
                 }
                 if (ktoraSekunda == 240)
