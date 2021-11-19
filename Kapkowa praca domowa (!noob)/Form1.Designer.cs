@@ -172,6 +172,7 @@
             this.zaczynamy.Text = "Start";
             this.zaczynamy.UseVisualStyleBackColor = true;
             this.zaczynamy.Click += new System.EventHandler(this.zaczynamy_Click);
+            this.zaczynamy.MouseClick += new System.Windows.Forms.MouseEventHandler(this.zaczynamyGre);
             // 
             // zycko1
             // 
@@ -203,7 +204,6 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(191, 17);
             this.progressBar1.TabIndex = 14;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // winLabel
             // 
@@ -215,7 +215,6 @@
             this.winLabel.Size = new System.Drawing.Size(233, 38);
             this.winLabel.TabIndex = 15;
             this.winLabel.Text = "Wygrałeś. Cool!";
-            this.winLabel.Click += new System.EventHandler(this.winLabel_Click);
             // 
             // istrukcjaLabel
             // 
@@ -257,6 +256,7 @@
             this.godMode.Name = "godMode";
             this.godMode.Size = new System.Drawing.Size(72, 17);
             this.godMode.TabIndex = 19;
+            this.godMode.TabStop = false;
             this.godMode.Text = "Godmode";
             this.godMode.UseVisualStyleBackColor = true;
             this.godMode.CheckedChanged += new System.EventHandler(this.godMode_CheckedChanged);
@@ -293,7 +293,6 @@
             this.MaximizeBox = false;
             this.Name = "Altair";
             this.Text = "Altair";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Gracz)).EndInit();

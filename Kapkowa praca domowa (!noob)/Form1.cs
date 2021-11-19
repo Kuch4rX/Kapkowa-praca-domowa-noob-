@@ -161,11 +161,14 @@ namespace Kapkowa_praca_domowa___noob_
                     if (item.czyBonus)
                     {
                         ItemGoUp(item);
-                        rzycko++;
-                        if (rzycko > 3 & !godMode.Checked)
+                        if (rzycko < 3)
+                        {
+                            rzycko++;
+                        }
+/*                        if (rzycko > 3 & !godMode.Checked)
                         {
                             rzycko = 3;
-                        }
+                        }*/
                         if (rzycko == 3)
                         {
                             zycko3.Value = 100;
@@ -274,6 +277,8 @@ namespace Kapkowa_praca_domowa___noob_
         {
             muzyka.Stop();
             proby++;
+            animacja.Start();
+            muzyka.Play();
             przegranaLabel.Visible = false;
             godMode.Visible = false;
             winLabel.Visible = false;
@@ -282,7 +287,7 @@ namespace Kapkowa_praca_domowa___noob_
             progressBar1.Value = 0;
             progressMuzyki.Start();
             ileTickow = 0;
-            godmod();
+            predkoscGracza = 5;
             ktoraSekunda = 0;
             punkty = 0;
             probyLabel.Text = "Próby: " + proby;
@@ -290,8 +295,8 @@ namespace Kapkowa_praca_domowa___noob_
             comboLabel.Text = "Combo: 0x";
             GameOver = false;
             czyWin = false;
-            animacja.Start();
-            muzyka.Play();
+
+            godmod();
             usuwanieNubkuw();
             timerMuzyki.Start();
             zycko1.Value = 100;
@@ -350,6 +355,7 @@ namespace Kapkowa_praca_domowa___noob_
                 if (ktoraSekunda == 240)
                 {
                     usuwanieNubkuw();
+                    predkoscGracza = 10;
                     predkoscMin = 12;
                     predkoscMax = 16;
                     dodawanieNubkow(6, 3, 1);
@@ -574,8 +580,9 @@ namespace Kapkowa_praca_domowa___noob_
                 if (ktoraSekunda == 359)
                 {
                     usuwanieNubkuw();
+                    predkoscGracza = 5;
                     ileFlashow = 4;
-                    flash.Interval = 20;
+                    flash.Interval = 50;
                     flash.Start();
                     predkoscMin = 3;
                     predkoscMax = 5;
@@ -653,24 +660,6 @@ namespace Kapkowa_praca_domowa___noob_
 
         private void zaczynamy_Click(object sender, EventArgs e)
         {
-            resetGry();
-            skinyLabel.Visible = false;
-            skinCzerwony.Visible = false;
-            skinPomaranczowy.Visible = false;
-            skinRóżowy.Visible = false;
-            skinCyan.Visible = false;
-            skinBialasa.Visible = false;
-            zaczynamy.Visible = false;
-            muzyka.Play();
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void winLabel_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -698,6 +687,19 @@ namespace Kapkowa_praca_domowa___noob_
             {
                 rzycko = 3;
             }
+        }
+
+        private void zaczynamyGre(object sender, MouseEventArgs e)
+        {
+            resetGry();
+            skinyLabel.Visible = false;
+            skinCzerwony.Visible = false;
+            skinPomaranczowy.Visible = false;
+            skinRóżowy.Visible = false;
+            skinCyan.Visible = false;
+            skinBialasa.Visible = false;
+            zaczynamy.Visible = false;
+            muzyka.Play();
         }
 
         private PictureBox twuszboxa(int ile)
