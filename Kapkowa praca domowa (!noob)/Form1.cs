@@ -36,6 +36,7 @@ namespace Kapkowa_praca_domowa___noob_
         int ileFlashow = 0;
         int rzycko = 99;
         bool czyWin;
+        int maxCombo = 0;
         int proby = 0;
         DiscordWebHook discord = new DiscordWebHook();
 
@@ -185,8 +186,14 @@ namespace Kapkowa_praca_domowa___noob_
                     else if (item.czyDobry)
                     {
                         combo++;
+                        
                         comboLabel.Text = "Combo: " + combo + "x";
                         punkty += 1 * combo;
+                        if (combo > maxCombo)
+                        {
+                            maxCombo = combo;
+                            maxComboLabel.Text = "Max: " + maxCombo.ToString() + "x";
+                        }
                         punktyLabel.Text = "Punkty: " + punkty;
                         ItemGoUp(item);
                     }
@@ -245,7 +252,7 @@ namespace Kapkowa_praca_domowa___noob_
             {
                 prawo = true;
             }
-            if (e.KeyCode == Keys.Space & GameOver)
+            if (e.KeyCode == Keys.R & GameOver)
             {
                 czyWin = false;
                 timerMuzyki.Stop();
@@ -264,7 +271,7 @@ namespace Kapkowa_praca_domowa___noob_
                 skinBialasa.Visible = true;
                 muzyka.Pause();
             }
-            if (e.KeyCode == Keys.Space & czyWin)
+            if (e.KeyCode == Keys.R & czyWin)
             {
                 timerMuzyki.Stop();
                 resetGry();
@@ -295,7 +302,8 @@ namespace Kapkowa_praca_domowa___noob_
             comboLabel.Text = "Combo: 0x";
             GameOver = false;
             czyWin = false;
-
+            maxCombo = 0;
+            maxComboLabel.Text = "Max: " + maxCombo.ToString() + "x";
             godmod();
             usuwanieNubkuw();
             timerMuzyki.Start();

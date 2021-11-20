@@ -50,6 +50,7 @@
             this.przegranaLabel = new System.Windows.Forms.Label();
             this.probyLabel = new System.Windows.Forms.Label();
             this.godMode = new System.Windows.Forms.CheckBox();
+            this.maxComboLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Gracz)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,9 +224,9 @@
             this.istrukcjaLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.istrukcjaLabel.Location = new System.Drawing.Point(22, 198);
             this.istrukcjaLabel.Name = "istrukcjaLabel";
-            this.istrukcjaLabel.Size = new System.Drawing.Size(356, 25);
+            this.istrukcjaLabel.Size = new System.Drawing.Size(310, 25);
             this.istrukcjaLabel.TabIndex = 16;
-            this.istrukcjaLabel.Text = "Naciśnij spacje aby zagrać ponownie!";
+            this.istrukcjaLabel.Text = "Naciśnij R aby zagrać ponownie!";
             // 
             // przegranaLabel
             // 
@@ -252,7 +253,7 @@
             // godMode
             // 
             this.godMode.AutoSize = true;
-            this.godMode.Location = new System.Drawing.Point(302, 36);
+            this.godMode.Location = new System.Drawing.Point(160, 60);
             this.godMode.Name = "godMode";
             this.godMode.Size = new System.Drawing.Size(72, 17);
             this.godMode.TabIndex = 19;
@@ -261,12 +262,24 @@
             this.godMode.UseVisualStyleBackColor = true;
             this.godMode.CheckedChanged += new System.EventHandler(this.godMode_CheckedChanged);
             // 
+            // maxComboLabel
+            // 
+            this.maxComboLabel.AutoSize = true;
+            this.maxComboLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.maxComboLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.maxComboLabel.Location = new System.Drawing.Point(298, 33);
+            this.maxComboLabel.Name = "maxComboLabel";
+            this.maxComboLabel.Size = new System.Drawing.Size(69, 21);
+            this.maxComboLabel.TabIndex = 20;
+            this.maxComboLabel.Text = "Max: 0x";
+            // 
             // Altair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(402, 667);
+            this.Controls.Add(this.maxComboLabel);
             this.Controls.Add(this.godMode);
             this.Controls.Add(this.probyLabel);
             this.Controls.Add(this.przegranaLabel);
@@ -324,6 +337,7 @@
         private System.Windows.Forms.Label przegranaLabel;
         private System.Windows.Forms.Label probyLabel;
         private System.Windows.Forms.CheckBox godMode;
+        private System.Windows.Forms.Label maxComboLabel;
     }
 }
 
