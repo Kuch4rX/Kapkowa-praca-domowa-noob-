@@ -227,6 +227,7 @@ namespace Kapkowa_praca_domowa___noob_
                             godMode.Visible = true;
                             GameOver = true;
                             muzyka.Stop();
+                            progressMuzyki.Stop();
                         }
 
                     }
