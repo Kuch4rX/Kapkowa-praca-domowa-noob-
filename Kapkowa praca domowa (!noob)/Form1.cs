@@ -21,7 +21,6 @@ namespace Kapkowa_praca_domowa___noob_
         Random random = new Random();
         List<klocek> nubkuw = new List<klocek>();
         bool GameOver;
-        int losowanieBonusuw = 0;
         int combo = 0;
         string sciezkaDoMuzyki;
         int predkoscMin;
@@ -77,15 +76,19 @@ namespace Kapkowa_praca_domowa___noob_
             {
                 (sender as Timer).Stop(); // Jeżeli progressBar się zapełni to przestań liczyć.
                 czyWin = true;
-                if (czyWin)
+                if (czyWin & godMode.Checked)
                 {
-                    wyslijWiadomoscDiscord(Environment.UserName + " wygrał z wynikiem " + punkty + " punktów." + "Życia: " + rzycko);
+                    wyslijWiadomoscDiscord(Environment.UserName + " wygrał z wynikiem " + punkty + " punktów." + " Życia: " + rzycko + "MaxCombo: " + maxCombo + " Godmode");
+                    
                     usuwanieNubkuw();
                     animacja.Stop();
                     winLabel.Visible = true;
                     istrukcjaLabel.Visible = true;
                 }
-
+                else if (czyWin)
+                {
+                    wyslijWiadomoscDiscord(Environment.UserName + " wygrał z wynikiem " + punkty + " punktów." + " Życia: " + rzycko + "MaxCombo: " + maxCombo);
+                }
             }
         }
 
