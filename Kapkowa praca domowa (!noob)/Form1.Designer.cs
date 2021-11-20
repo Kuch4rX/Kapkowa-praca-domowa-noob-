@@ -51,6 +51,7 @@
             this.probyLabel = new System.Windows.Forms.Label();
             this.godMode = new System.Windows.Forms.CheckBox();
             this.maxComboLabel = new System.Windows.Forms.Label();
+            this.credits = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Gracz)).BeginInit();
             this.SuspendLayout();
             // 
@@ -273,12 +274,24 @@
             this.maxComboLabel.TabIndex = 20;
             this.maxComboLabel.Text = "Max: 0x";
             // 
+            // credits
+            // 
+            this.credits.AutoSize = true;
+            this.credits.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.credits.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.credits.Location = new System.Drawing.Point(137, 634);
+            this.credits.Name = "credits";
+            this.credits.Size = new System.Drawing.Size(118, 21);
+            this.credits.TabIndex = 21;
+            this.credits.Text = "Music: Kindrid";
+            // 
             // Altair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(402, 667);
+            this.Controls.Add(this.credits);
             this.Controls.Add(this.maxComboLabel);
             this.Controls.Add(this.godMode);
             this.Controls.Add(this.probyLabel);
@@ -338,6 +351,7 @@
         private System.Windows.Forms.Label probyLabel;
         private System.Windows.Forms.CheckBox godMode;
         private System.Windows.Forms.Label maxComboLabel;
+        private System.Windows.Forms.Label credits;
     }
 }
 

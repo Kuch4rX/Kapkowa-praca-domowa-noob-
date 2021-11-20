@@ -47,6 +47,7 @@ namespace Kapkowa_praca_domowa___noob_
             przegranaLabel.Visible = false;
             skinyLabel.Visible = true;
             skinCzerwony.Visible = true;
+            credits.Visible = true;
             skinPomaranczowy.Visible = true;
             skinRóżowy.Visible = true;
             skinCyan.Visible = true;
@@ -292,6 +293,7 @@ namespace Kapkowa_praca_domowa___noob_
             przegranaLabel.Visible = false;
             godMode.Visible = false;
             winLabel.Visible = false;
+            credits.Visible = false;
             istrukcjaLabel.Visible = false;
             progressMuzyki.Stop();
             progressBar1.Value = 0;
