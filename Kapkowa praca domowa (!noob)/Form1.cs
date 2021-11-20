@@ -80,16 +80,15 @@ namespace Kapkowa_praca_domowa___noob_
                 if (czyWin & godMode.Checked)
                 {
                     wyslijWiadomoscDiscord(Environment.UserName + " wygrał z wynikiem " + punkty + " punktów." + " Życia: " + rzycko + "MaxCombo: " + maxCombo + " Godmode");
-                    
-                    usuwanieNubkuw();
-                    animacja.Stop();
-                    winLabel.Visible = true;
-                    istrukcjaLabel.Visible = true;
                 }
                 else if (czyWin)
                 {
                     wyslijWiadomoscDiscord(Environment.UserName + " wygrał z wynikiem " + punkty + " punktów." + " Życia: " + rzycko + "MaxCombo: " + maxCombo);
                 }
+                usuwanieNubkuw();
+                animacja.Stop();
+                winLabel.Visible = true;
+                istrukcjaLabel.Visible = true;
             }
         }
 
